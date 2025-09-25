@@ -213,10 +213,6 @@ export default function Home() {
       <footer>
         <div className="container">
           <div className="footer-content">
-            <div className="footer-logo">
-              <img src="/logo.png" alt="Movie Watcher Logo" className="footer-logo-img" />
-              <h3>Movie Watcher</h3>
-            </div>
             <div className="footer-description">
               <p>Movie Watcher is your ultimate destination for streaming movies online. We offer a wide variety of movies across different genres, all available for instant streaming.</p>
               <p>© 2023 Movie Watcher. All rights reserved.</p>
