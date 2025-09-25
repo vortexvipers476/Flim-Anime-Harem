@@ -1,0 +1,31 @@
+{
+  "name": "Watch Anime App ",
+  "short_name": "MovieWatcher",
+  "description": "Anime Watching Website Suitable for Weebs / Anime Lovers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#e50914",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
