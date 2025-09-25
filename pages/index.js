@@ -102,10 +102,7 @@ export default function Home() {
       <header>
         <div className="container">
           <div className="header-content">
-            <div className="logo-container">
-              <img src="/logo.png" alt="Movie Watcher Logo" className="logo" />
-              <h1>Movie Watcher</h1>
-            </div>
+            <h1>Movie Watcher</h1>
             <p className="site-description">Stream your favorite movies anytime, anywhere</p>
           </div>
         </div>
@@ -213,6 +210,9 @@ export default function Home() {
       <footer>
         <div className="container">
           <div className="footer-content">
+            <div className="footer-logo">
+              <h3>Movie Watcher</h3>
+            </div>
             <div className="footer-description">
               <p>Movie Watcher is your ultimate destination for streaming movies online. We offer a wide variety of movies across different genres, all available for instant streaming.</p>
               <p>© 2023 Movie Watcher. All rights reserved.</p>
@@ -327,4 +327,4 @@ export default function Home() {
       )}
     </div>
   );
-    }
+        }
