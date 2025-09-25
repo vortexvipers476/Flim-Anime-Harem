@@ -47,28 +47,13 @@ header {
   align-items: center;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.logo {
-  height: 50px;
-  margin-right: 15px;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
 header h1 {
   font-size: 32px;
   background: linear-gradient(90deg, #e50914, #ff6b6b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-bottom: 10px;
 }
 
 .site-description {
@@ -264,14 +249,7 @@ footer {
 }
 
 .footer-logo {
-  display: flex;
-  align-items: center;
   margin-bottom: 15px;
-}
-
-.footer-logo-img {
-  height: 40px;
-  margin-right: 10px;
 }
 
 .footer-logo h3 {
@@ -309,16 +287,6 @@ footer {
   padding: 15px 20px;
   border-radius: var(--border-radius);
   backdrop-filter: blur(5px);
-}
-
-.player-logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.player-logo {
-  height: 40px;
-  margin-right: 10px;
 }
 
 .movie-player-header h1 {
@@ -429,17 +397,6 @@ footer {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.prompt-logo-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.prompt-logo {
-  height: 30px;
-  margin-right: 10px;
 }
 
 .password-prompt-content h2 {
@@ -687,4 +644,4 @@ footer {
 
 .feature-card p {
   color: #b3b3b3;
-  }
+    }
