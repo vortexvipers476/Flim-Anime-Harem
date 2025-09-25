@@ -105,10 +105,7 @@ export default function MoviePlayer() {
     <div className="movie-player-container">
       <div className="container">
         <div className="movie-player-header">
-          <div className="player-logo-container">
-            <img src="/logo.png" alt="Movie Watcher Logo" className="player-logo" />
-            <h1>Movie Watcher</h1>
-          </div>
+          <h1>Movie Watcher</h1>
           <div>
             <button className="back-button" onClick={goBack}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -134,10 +131,7 @@ export default function MoviePlayer() {
         {showPasswordPrompt ? (
           <div className="password-prompt">
             <div className="password-prompt-content">
-              <div className="prompt-logo-container">
-                <img src="/logo.png" alt="Movie Watcher Logo" className="prompt-logo" />
-                <h2>Password Required</h2>
-              </div>
+              <h2>Password Required</h2>
               <p>This movie is locked. Please enter the password to continue.</p>
               <input
                 type="password"
@@ -256,4 +250,4 @@ export default function MoviePlayer() {
       )}
     </div>
   );
-                }
+        }
