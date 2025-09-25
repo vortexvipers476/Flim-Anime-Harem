@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "title": "Open Movie",
+    "category": "Action",
+    "description": "An action movie for everyone",
+    "thumbnail": "/thumbnails/open.jpg",
+    "url": "/videos/open.mp4",
+    "locked": false
+  },
+  {
+    "id": 2,
+    "title": "Secret Movie",
+    "category": "Drama",
+    "description": "This movie is locked",
+    "thumbnail": "/thumbnails/secret.jpg",
+    "url": "/videos/secret.mp4",
+    "locked": true,
+    "password": "12345"
+  }
+]
