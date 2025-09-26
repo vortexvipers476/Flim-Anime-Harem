@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Not Title",
-    "category": "Harem",
+    "category": "Anime Harem",
     "description": "Now Women Are Accepted to Become Photo Models",
     "thumbnail": "/thumbnails/18+.jpg",
     "episodes": [
@@ -18,26 +18,20 @@
   },
   {
     "id": 2,
-    "title": "Secret Movie",
-    "category": "Drama",
-    "description": "This movie is locked",
-    "thumbnail": "/thumbnails/secret.jpg",
+    "title": "Mabar Bersama Slime Alien",
+    "category": "Anime Harem",
+    "description": "Seseorang cowok Mabar bersama slime alien yang menyamar menjadi wanita cantik ",
+    "thumbnail": "/thumbnails/slime-alien.jpg",
     "episodes": [
       {
         "id": 1,
-        "title": "Episode 1: The Secret",
-        "url": "/videos/secret-ep1.mp4",
-        "duration": "50:10"
-      },
-      {
-        "id": 2,
-        "title": "Episode 2: The Revelation",
-        "url": "/videos/secret-ep2.mp4",
-        "duration": "47:45"
+        "title": "Episode 1: Mabar Bersama Slime Alien",
+        "url": "https://files.catbox.moe/rjm4tj.mp4",
+        "duration": "15:57"
       }
     ],
     "locked": true,
-    "password": "12345"
+    "password": "708090"
   },
   {
     "id": 3,
