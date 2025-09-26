@@ -1,11 +1,19 @@
 [
+[
   {
     "id": 1,
     "title": "Not Title",
     "category": "Harem",
     "description": " Now Women Are Accepted to Become Photo Models",
     "thumbnail": "/thumbnails/18+.jpg",
-    "url": "https://files.catbox.moe/s4m7qh.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "Episode 1: Not Title",
+        "url": "https://files.catbox.moe/s4m7qh.mp4",
+        "duration": "16:28"
+      }
+    ],
     "locked": false
   },
   {
@@ -14,8 +22,55 @@
     "category": "Drama",
     "description": "This movie is locked",
     "thumbnail": "/thumbnails/secret.jpg",
-    "url": "/videos/secret.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "Episode 1: The Secret",
+        "url": "/videos/secret-ep1.mp4",
+        "duration": "50:10"
+      },
+      {
+        "id": 2,
+        "title": "Episode 2: The Revelation",
+        "url": "/videos/secret-ep2.mp4",
+        "duration": "47:45"
+      }
+    ],
     "locked": true,
     "password": "12345"
+  },
+  {
+    "id": 3,
+    "title": "Adventure Series",
+    "category": "Adventure",
+    "description": "An exciting adventure series",
+    "thumbnail": "/thumbnails/adventure.jpg",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "Episode 1: The Journey Begins",
+        "url": "/videos/adventure-ep1.mp4",
+        "duration": "43:20"
+      },
+      {
+        "id": 2,
+        "title": "Episode 2: The Unknown Path",
+        "url": "/videos/adventure-ep2.mp4",
+        "duration": "45:15"
+      },
+      {
+        "id": 3,
+        "title": "Episode 3: The Discovery",
+        "url": "/videos/adventure-ep3.mp4",
+        "duration": "46:40"
+      },
+      {
+        "id": 4,
+        "title": "Episode 4: The Challenge",
+        "url": "/videos/adventure-ep4.mp4",
+        "duration": "44:55"
+      }
+    ],
+    "locked": false
   }
 ]
