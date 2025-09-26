@@ -7,6 +7,7 @@ export default function MoviePlayer() {
   const router = useRouter();
   const { movieId } = router.query;
   const [movie, setMovie] = useState(null);
+  const [currentEpisode, setCurrentEpisode] = useState(null);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
@@ -20,6 +21,8 @@ export default function MoviePlayer() {
       const foundMovie = moviesData.find(m => m.id === parseInt(movieId));
       if (foundMovie) {
         setMovie(foundMovie);
+        // Set first episode as default
+        setCurrentEpisode(foundMovie.episodes[0]);
         if (foundMovie.locked) {
           setShowPasswordPrompt(true);
         }
@@ -67,7 +70,7 @@ export default function MoviePlayer() {
     setNotification({
       type: 'success',
       title: 'Video Loaded',
-      message: 'Your movie is ready to watch'
+      message: 'Your episode is ready to watch'
     });
     setShowNotification(true);
     
@@ -97,6 +100,11 @@ export default function MoviePlayer() {
     return () => clearTimeout(timer);
   };
 
+  const selectEpisode = (episode) => {
+    setCurrentEpisode(episode);
+    setVideoLoading(true);
+  };
+
   if (!movie) {
     return <div className="loading-spinner"></div>;
   }
@@ -105,7 +113,9 @@ export default function MoviePlayer() {
     <div className="movie-player-container">
       <div className="container">
         <div className="movie-player-header">
-          <h1>Movie Watcher</h1>
+          <div className="player-logo-container">
+            <h1>{movie.title}</h1>
+          </div>
           <div>
             <button className="back-button" onClick={goBack}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -131,8 +141,10 @@ export default function MoviePlayer() {
         {showPasswordPrompt ? (
           <div className="password-prompt">
             <div className="password-prompt-content">
-              <h2>Password Required</h2>
-              <p>This movie is locked. Please enter the password to continue.</p>
+              <div className="prompt-logo-container">
+                <h2>Password Required</h2>
+              </div>
+              <p>This series is locked. Please enter the password to continue.</p>
               <input
                 type="password"
                 placeholder="Enter password"
@@ -155,26 +167,54 @@ export default function MoviePlayer() {
                   <div className="loading-spinner"></div>
                 </div>
               )}
-              <video
-                src={movie.url}
-                controls
-                autoPlay
-                onLoadedData={handleVideoLoaded}
-                onError={handleVideoError}
-              />
+              {currentEpisode && (
+                <video
+                  src={currentEpisode.url}
+                  controls
+                  autoPlay
+                  onLoadedData={handleVideoLoaded}
+                  onError={handleVideoError}
+                />
+              )}
             </div>
-            <div className="movie-info">
-              <h2>{movie.title}</h2>
-              <div className="category">{movie.category}</div>
-              <p>{movie.description}</p>
-              <div style={{ marginTop: '20px' }}>
-                <button 
-                  className="back-button" 
-                  onClick={() => setShowInfoPopup(true)}
-                >
-                  More Information
-                </button>
+            
+            <div className="episode-info">
+              <h2>{currentEpisode ? currentEpisode.title : 'Select an episode'}</h2>
+              <div className="episode-meta">
+                <span className="category">{movie.category}</span>
+                {currentEpisode && (
+                  <span className="duration">{currentEpisode.duration}</span>
+                )}
               </div>
+              <p>{movie.description}</p>
+            </div>
+            
+            <div className="episodes-list">
+              <h3>Episodes</h3>
+              <div className="episodes-grid">
+                {movie.episodes.map(episode => (
+                  <div 
+                    key={episode.id} 
+                    className={`episode-card ${currentEpisode && currentEpisode.id === episode.id ? 'active' : ''}`}
+                    onClick={() => selectEpisode(episode)}
+                  >
+                    <div className="episode-number">EP {episode.id}</div>
+                    <div className="episode-details">
+                      <h4>{episode.title}</h4>
+                      <span className="episode-duration">{episode.duration}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div style={{ marginTop: '20px' }}>
+              <button 
+                className="back-button" 
+                onClick={() => setShowInfoPopup(true)}
+              >
+                More Information
+              </button>
             </div>
           </>
         )}
@@ -194,6 +234,10 @@ export default function MoviePlayer() {
           <div style={{ marginBottom: '15px' }}>
             <h4 style={{ marginBottom: '5px', color: 'var(--primary-color)' }}>Description</h4>
             <p>{movie.description}</p>
+          </div>
+          <div style={{ marginBottom: '15px' }}>
+            <h4 style={{ marginBottom: '5px', color: 'var(--primary-color)' }}>Episodes</h4>
+            <p>{movie.episodes.length} episodes available</p>
           </div>
           <div style={{ marginBottom: '15px' }}>
             <h4 style={{ marginBottom: '5px', color: 'var(--primary-color)' }}>Status</h4>
@@ -250,4 +294,4 @@ export default function MoviePlayer() {
       )}
     </div>
   );
-        }
+    }
