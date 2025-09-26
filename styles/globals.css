@@ -645,3 +645,112 @@ footer {
 .feature-card p {
   color: #b3b3b3;
     }
+
+/* Episode info */
+.episode-info {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(5px);
+}
+
+.episode-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.episode-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.episode-meta .category {
+  display: inline-block;
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+}
+
+.episode-meta .duration {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+}
+
+/* Episodes list */
+.episodes-list {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.episodes-list h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.episode-card {
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.episode-card:hover {
+  background-color: rgba(50, 50, 50, 0.7);
+  transform: translateY(-3px);
+}
+
+.episode-card.active {
+  border-color: var(--primary-color);
+  background-color: rgba(229, 9, 20, 0.2);
+}
+
+.episode-number {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.episode-details {
+  flex: 1;
+}
+
+.episode-details h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.episode-duration {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.episode-card.active .episode-number {
+  background-color: var(--primary-color);
+}
